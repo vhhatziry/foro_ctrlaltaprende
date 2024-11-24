@@ -6,15 +6,19 @@
     font-family: 'Arial', sans-serif;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     background-color: var(--background-color); 
     color: var(--text-color); 
-}
-
-aside{
     display: flex;
+    flex-direction: column; 
+    min-height: 100vh; 
 }
 
+/* Variables */
 :root {
     --primary-color: rgba(86, 124, 141, 1);
     --secondary-color: rgba(255, 255, 242, 1);
@@ -25,28 +29,84 @@ aside{
     --primary-color-half: rgba(86, 124, 141, 0.5);
 }
 
-/* Contenedor principal */
-.container {
-    display: flex;
-    min-height: 100vh; 
+/* Estructura principal */
+.main-container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "aside main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 20% 1fr;
+    height: 100vh;
 }
 
-/* Barra lateral */
+/* Header */
+.nav_header {
+    grid-area: header;
+    height: 100px;
+    background-color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.nav_header h1 { 
+    color: var(--secondary-color); 
+    margin-left: auto;
+}
+
+.nav_header img {
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.placeholder {
+    background-color: var(--primary-color-half);
+    color: var(--secondary-color); 
+    padding: 0.5rem 0.5rem;
+    border: none;
+    border-radius: 2px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.introduce {
+    font-size: 1rem;  
+    width: 15em;  
+}
+
+.search-topic-btn {
+    background-color: var(--text-color);
+    color: var(--secondary-color);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 80px;
+    margin-left: 10px;
+}
+
+.search-topic-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* Sidebar */
 .sidebar {
+    grid-area: aside;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 1rem;
-    position: fixed;    
-    bottom: 0; 
-    left: 0;
-    height: 552px; 
-    z-index: 100;  
-}
-
-.sidebar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Para que ocupe toda la altura */
 }
 
 .sidebar nav ul {
@@ -70,14 +130,42 @@ aside{
     color: var(--light-gray);
 }
 
+.perfil {
+    align-items: center; 
+    gap: 10px;
+    margin-bottom: 10px;
+    background-color: var(--border-color); 
+    padding: 10px 0; 
+    width: 80%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.perfil img { 
+    width: 100px;
+    border-color: #fffff1;
+    border-width: 2px;
+    border-style: solid; 
+    border-radius: 60px;
+}
+
+.perfil .etiqueta {
+    font-style: oblique;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: black;
+    text-shadow: -1px -1px 0 var(--light-gray), 
+                 1px -1px 0 var(--light-gray), 
+                 -1px 1px 0 var(--light-gray), 
+                 1px 1px 0 var(--light-gray);
+}
+
 /* Contenido principal */
 .main-content {
-    flex: 1;
+    grid-area: main;
+    overflow-y: auto; /* Solo este contenedor será desplazable */
     padding: 1.5rem;
-    overflow-y: auto;
-    margin-left: 20%; 
-    padding-top: 50px; 
-    margin-top: 80px; 
+    background-color: var(--background-color);
 }
 
 .main-header {
@@ -85,10 +173,6 @@ aside{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-}
-
-.main-header h1 {
-    font-size: 2rem;
 }
 
 .new-topic-btn {
@@ -108,46 +192,6 @@ aside{
     background-color: var(--text-color);
 }
 
-.placeholder{
-    background-color: var( --primary-color-half);
-    color: var(--secondary-color);
-    padding: 0.5rem 0.5rem;
-    border: none;
-    border-radius: 2px;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-left: 20em;
-}
-
-
-.introduce{
-    font-size: 1rem;  
-    width: 15em;  
-}
-
-.search-topic-btn {
-    background-color:var(--text-color);
-    color: var(--secondary-color);
-    padding: 0.5rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    width: 80px;
-    margin-left: 10px;
-}
-
-.search-topic-btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-}
-
 /* Tarjetas de temas */
 .topics {
     display: flex;
@@ -162,94 +206,18 @@ aside{
     padding: 1rem;
 }
 
-.topic-card h3 a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
+/* Responsivo */
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside";
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
+    }
 
-.topic-card h3 a:hover {
-    text-decoration: underline;
-}
-
-.topic-card p {
-    font-size: 0.9rem;
-    color: var(--primary-color);
-    margin: 0.5rem 0;
-}
-
-.topic-stats {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
-    color: var(--primary-color);
-}
-
-.nav_header{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    background-color: var(--text-color);
-    gap: 10px;
-    align-items: center;
-    padding: 0.5rem;
-    justify-content: right;
-    position: fixed; 
-    top: 0; 
-    left: 0;
-    z-index: 100; 
-}
-
-.nav_header h1{
-    color: var(--secondary-color); 
-    margin-left: auto;
- }
- .nav_header img{
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.nav_foro .perfil{ 
-    display: flex;
-    flex-direction: column; 
-}
-.sidebar, .nav_foro{ 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center;  
-    justify-content: center;
-}
-
-.nav_foro ul {
-    margin: 20px 0 ; 
-    line-height: 2;
-}
-
-.perfil{
-    align-items: center; 
-    gap: 10px;
-    margin-bottom: 10px;
-    background-color: var(--border-color); 
-    padding: 10px 0; 
-    width: 80%;
-}
-
-.perfil img { 
-    order: 1;
-    width: 100px;
-    border-color: #fffff1;
-    border-width: 2px;
-    border-style: solid; 
-    border-radius: 60px;
-}
-
-.perfil .etiqueta{
-    gap: 3px;
-    font-style: oblique;
-    font-size: 1.5rem;
-    font-weight: bolder;
-    color: black;
-    text-shadow: -1px -1px 0 var(--light-gray), 
-                 1px -1px 0 var(--light-gray), 
-                -1px 1px 0 var(--light-gray), 
-                 1px 1px 0 var(--light-gray);
+    .sidebar {
+        height: auto;
+    }
 }

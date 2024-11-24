@@ -3,38 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ctrl + Alt + Aprende - Foro</title>
+    <title>Ctrl 1  + Alt + Aprende - Foro</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav class="nav_header">
-        <form class="placeholder">
-            <input placeholder="Busca un tema :3" class="introduce">
-            <input value="Buscar" class="search-topic-btn">
-        </form> 
-        <h1>Ctrl + Alt + Aprende</h1>
-        <img src="../controlaltaprende/image/favicon.jpg" width="80px">
-    </nav>
-    <div class="container">
-        <!-- Barra lateral -->
+    <div class="main-container">
+        <nav class="nav_header">
+            <form class="placeholder">
+                <input placeholder="Busca un tema :3" class="introduce">
+                <input value="Buscar" class="search-topic-btn">
+            </form> 
+            <h1>Ctrl + Alt + Aprende</h1>
+            <img src="../controlaltaprende/image/favicon.jpg" width="80px">
+        </nav>
+
         <aside class="sidebar">
             <nav class="nav_foro">
                 <div class="perfil">
                     <a href="#">
-                        <img src="../controlaltaprende/image/favicon.jpg" >
+                        <img src="../controlaltaprende/image/favicon.jpg">
                     </a> 
                     <span class="etiqueta">Mi perfil</span>
                 </div>  
                 <ul>
-                    <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="#"><i class="fas fa-fire"></i> Temas más hablados</a></li>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="foro.html"><i class="fas fa-fire"></i> Temas más hablados</a></li>
                     <li><a href="#"><i class="fas fa-question-circle"></i> Preguntas</a></li>
                 </ul>
             </nav>
         </aside>
 
-        <!-- Contenido principal -->
         <main class="main-content">
             <header class="main-header">
                 <h1>Bienvenido al foro</h1>
@@ -42,15 +41,15 @@
             </header>
 
             <section class="topics">
-                <!-- Tarjeta de tema -->
-                <article class="topic-card">
-                    <h3><a href="#">¿Cómo solucionar errores comunes en C++?</a></h3>
+                <!-- Aquí van los temas del foro -->
+                <a href="articulo.html"><article class="topic-card">
+                    <h3>¿Cómo solucionar errores comunes en C++?</h3>
                     <p>Publicado por <span>Usuario1</span> el 20/11/2024</p>
                     <div class="topic-stats">
                         <span><i class="fas fa-comments"></i> 10 Respuestas</span>
                         <span><i class="fas fa-eye"></i> 150 Vistas</span>
                     </div>
-                </article>
+                </article></a>
 
                 <article class="topic-card">
                     <h3><a href="#">Cliqué máximo, un problema NP-Completo</a></h3>
@@ -104,7 +103,6 @@
                         <span><i class="fas fa-eye"></i> 21  Vistas</span>
                     </div>
                 </article>
-                <!-- Agregar más temas aquí -->
             </section>
         </main>
     </div>
