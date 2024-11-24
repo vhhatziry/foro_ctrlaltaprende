@@ -181,7 +181,7 @@ body {
     background-color: var(--variation-color); 
     color: var(--secondary-color); 
     padding: 1rem 0.5rem;
-    border: none;
+    border:solid;    
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
@@ -199,10 +199,10 @@ body {
 }
 
 .follow-btn:hover{
+    border-width: medium; 
     background-image: linear-gradient(to right, #9133e8, #0f33d5,var(--primary-color), #EEB211);
     color: white;
     border-color: var(--text-color-half);
-    border: solid;
   }
 
 .button-container {
@@ -219,7 +219,7 @@ body {
     background-color: var(--primary-color); 
     color: var(--secondary-color); 
     padding: 0.8rem 1.5rem;
-    border: none;
+    border: solid;
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
@@ -247,14 +247,12 @@ body {
     background-color: var(--variation-color);
     color: var(--light-gray);
     border-color: var(--light-gray);
-    border: solid;
   }
   
   .login-btn:hover{
     background-color: var(--text-color);
     color: var(--light-gray);
     border-color: var(--light-gray);
-    border: solid;
   }
 
 
