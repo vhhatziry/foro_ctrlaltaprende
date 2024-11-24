@@ -8,6 +8,7 @@
 
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -27,6 +28,9 @@ body {
     --light-gray: rgba(200, 217, 230, 1);
     --border-color: rgba(200, 217, 230, 0.3); 
     --primary-color-half: rgba(86, 124, 141, 0.5);
+    --text-color-half: rgba(47, 65, 86, 0.5);
+    --variation-color: rgb(86, 141, 136);
+    --variation-color: rgba(86, 141, 136, 0.05);
 }
 
 /* Estructura principal */
@@ -54,11 +58,12 @@ body {
 .nav_header h1 { 
     color: var(--secondary-color); 
     margin-left: auto;
+    margin-right: 10px;
 }
 
 .nav_header img {
     border-radius: 5px;
-    margin-right: 10px;
+    margin-right: 25px;
 }
 
 .placeholder {
@@ -71,6 +76,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-left: 40px;
 }
 
 .introduce {
@@ -100,13 +106,14 @@ body {
 
 /* Sidebar */
 .sidebar {
+    align-items: center;
     grid-area: aside;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding: 1rem;
+    padding: 0.5rem 1rem 1rem;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Para que ocupe toda la altura */
+    height: 100%; 
 }
 
 .sidebar nav ul {
@@ -114,7 +121,8 @@ body {
 }
 
 .sidebar nav ul li {
-    margin-bottom: 1rem; 
+    margin: 1rem 0; 
+    line-height: 2;
 }
 
 .sidebar nav ul li a {
@@ -128,6 +136,14 @@ body {
 
 .sidebar nav ul li a:hover {
     color: var(--light-gray);
+}
+
+.nav_foro, .perfil_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    text-decoration: none;
 }
 
 .perfil {
@@ -147,6 +163,7 @@ body {
     border-width: 2px;
     border-style: solid; 
     border-radius: 60px;
+    margin: 0 50px;
 }
 
 .perfil .etiqueta {
@@ -159,6 +176,87 @@ body {
                  -1px 1px 0 var(--light-gray), 
                  1px 1px 0 var(--light-gray);
 }
+
+.follow-btn {
+    background-color: var(--variation-color); 
+    color: var(--secondary-color); 
+    padding: 1rem 0.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+
+.topic-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.topic-body button{
+    align-self: center;
+    background-color: var(--primary-color);
+}
+
+.follow-btn:hover{
+    background-image: linear-gradient(to right, #9133e8, #0f33d5,var(--primary-color), #EEB211);
+    color: white;
+    border-color: var(--text-color-half);
+    border: solid;
+  }
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--text-color-half);
+    padding: 10px 30px;
+    margin: 5px 0;
+  }
+  
+  .login-btn {
+    background-color: var(--primary-color); 
+    color: var(--secondary-color); 
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bolder;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .separator {
+    color: var(--light-gray); 
+    font-size: 0.9rem;
+  }
+  
+  .signup-btn {
+    font-weight: bolder;
+    background-color: var(--secondary-color); 
+    color: var(--primary-color); 
+    padding: 0.8rem 1.5rem;
+    border: 1px solid var(--primary-color); 
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .signup-btn:hover{
+    background-color: var(--variation-color);
+    color: var(--light-gray);
+    border-color: var(--light-gray);
+    border: solid;
+  }
+  
+  .login-btn:hover{
+    background-color: var(--text-color);
+    color: var(--light-gray);
+    border-color: var(--light-gray);
+    border: solid;
+  }
+
 
 /* Contenido principal */
 .main-content {
@@ -193,18 +291,226 @@ body {
 }
 
 /* Tarjetas de temas */
-.topics {
+.topics{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.topic-card {
+.topic-card{
     background-color: var(--secondary-color);
     border: 1px solid var(--light-gray);
     border-radius: 10px;
     padding: 1rem;
 }
+
+.topic-card:hover{
+    background-color: var(--primary-color);
+    border-color: var(--text-color);
+    color: var(--light-gray);
+}
+
+
+.topics a, .topic-card a:active{ 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside";
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        height: auto;
+    }
+}
+
+/* Estilos para el contenido del artículo */
+.topic-content {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.topic-content h2 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-style: oblique ;
+}
+
+.topic-metadata {
+    font-size: 0.9rem;
+    color: var(--primary-color-half);
+    margin-bottom: 1rem;
+}
+
+.topic-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.topic-body pre {
+    background-color: var(--background-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+.topic-body pre code {
+    color: var(--text-color);
+}
+
+/* Estilos para comentarios */
+.topic-comments {
+    margin-top: 2rem;
+}
+
+.topic-comments h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.comment {
+    background-color: var(--background-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.comment p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.comment strong {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.comment:hover {
+    background-color: var(--light-gray);
+    border-color: var(--primary-color);
+}
+
+/* Estilos para la sección de registro */
+.register-section {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--variation-color);
+}
+
+.register-section h2 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.register-section p {
+    font-size: 1rem;
+    color: var(--text-color-half);
+    margin-bottom: 1rem;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.register-form label {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.register-form input {
+    padding: 0.7rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.register-form button{
+    margin: 10px auto; 
+}
+
+.extra-options, .extra-options .submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+.submit-btn {
+    column-count: 3;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 10em;
+}
+
+.submit-btn:hover {
+    background-color: var(--text-color);
+}
+/* Botones adicionales: Google y Email */
+.google-btn, .email-btn {
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    padding: 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.google-btn:hover {
+    background-image: linear-gradient(to right, #3369E8, #D50F25, #EEB211, #009925);
+    color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.email-btn:hover {
+    background-image: linear-gradient(to right, #BB0018, #EA4335, #FBBC05, #34A853);
+    color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.google-btn img, .email-btn img {
+    width: 20px;
+    height: 20px;
+}
+
 
 /* Responsivo */
 @media (max-width: 768px) {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ctrl 1  + Alt + Aprende - Foro - ¿Cómo solucionar errores comunes en C++?</title> 
+    <title>Ctrl 1 + Alt + Aprende - Foro - ¿Cómo solucionar errores comunes en C++?</title> 
     <link rel="stylesheet" href="styles.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -11,7 +11,7 @@
     <div class="main-container">
         <nav class="nav_header">
             <form class="placeholder">
-                <input placeholder="Busca un tema :3" class="introduce">
+                <input placeholder=" Busca un tema :3" class="introduce">
                 <input value="Buscar" class="search-topic-btn">
             </form> 
             <h1>Ctrl + Alt + Aprende</h1>
@@ -20,17 +20,22 @@
 
         <aside class="sidebar">
             <nav class="nav_foro">
-                <div class="perfil">
-                    <a href="#">
-                        <img src="../controlaltaprende/image/favicon.jpg">
-                    </a> 
-                    <span class="etiqueta">Mi perfil</span>
-                </div>  
+                <a href="perfil.html" class="perfil_content">
+                    <div class="perfil">
+                      <img src="../controlaltaprende/image/favicon.jpg">
+                      <span class="etiqueta">Mi perfil</span>
+                    </div>
+                </a> 
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
                     <li><a href="foro.html"><i class="fas fa-fire"></i> Temas más hablados</a></li>
                     <li><a href="#"><i class="fas fa-question-circle"></i> Preguntas</a></li>
                 </ul>
+                <div class="button-container">
+                    <button class="login-btn">Iniciar sesión</button>
+                    <div class="separator">o</div>
+                    <button class="signup-btn">Crear una cuenta nueva</button>
+                </div>
             </nav>
         </aside>
 
@@ -52,6 +57,7 @@
                             }
                         </code></pre>
                         <p>Más texto del artículo...</p>
+                        <button class="follow-btn">Buscar información en los contenidos disponibles</button>
                     </div>
 
                     <div class="topic-comments">
@@ -63,6 +69,25 @@
                             <p><strong>Usuario3:</strong> Otra respuesta con más información.</p>
                         </div>
                     </div>
+
+                    <!-- Sección de Registro -->
+                    <section class="register-section">
+                        <h2>¿Quieres participar en el foro?</h2>
+                        <p>Regístrate para hacer preguntas, responder temas y más.</p>
+                        <form class="register-form" action="#" method="POST">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="Tu correo" required>
+
+                            <button type="submit" class="submit-btn">Registrarse</button>
+                        </form>
+                        <div class="extra-options">
+                            <button class="google-btn">Registrarse con Google</button>
+                            <button class="email-btn">Registrarse con Email</button>
+                        </div>
+                    </section>
                 </article>
             </section>
         </main>
