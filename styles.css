@@ -1,0 +1,204 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--background-color); 
+    color: var(--text-color); 
+}
+
+:root {
+    --primary-color: rgba(86, 124, 141, 1);
+    --secondary-color: rgba(255, 255, 242, 1);
+    --background-color: rgba(245, 239, 235, 1);
+    --text-color: rgba(47, 65, 86, 1);
+    --light-gray: rgba(200, 217, 230, 1);
+    --border-color: rgba(200, 217, 230, 0.3); 
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    min-height: 100vh; 
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 20%;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 1rem;
+    position: fixed; /* Fijamos el sidebar a la izquierda */
+    top: 0; 
+    left: 0;
+    height: 100vh; 
+    z-index: 100;  
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.sidebar nav ul {
+    list-style: none;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 1rem; 
+}
+
+.sidebar nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar nav ul li a:hover {
+    color: var(--light-gray);
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    margin-left: 20%; /* Ajustamos el margen para que no se solape con el sidebar */
+    padding-top: 50px; /* Ajustamos el padding para que no se solape con el header */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.main-header h1 {
+    font-size: 2rem;
+}
+
+.new-topic-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.new-topic-btn:hover {
+    background-color: var(--text-color);
+}
+
+/* Tarjetas de temas */
+.topics {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.topic-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--light-gray);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.topic-card h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.topic-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.topic-card p {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+
+.topic-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    background-color: var(--text-color);
+    gap: 10px;
+    align-items: center;
+    padding: 0.5rem;
+    justify-content: right;
+    position: fixed; /* Fijamos el header en la parte superior */
+    top: 0; 
+    left: 0;
+    z-index: 100; 
+     h1{
+        color: var(--secondary-color); 
+     }
+}
+
+.header img{
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.sidebar .nav_foro{ 
+    vertical-align: middle;
+}
+
+.nav_foro .perfil{ 
+    display: flex;
+    flex-direction: column; 
+}
+
+.nav_foro ul {
+    margin: 5px 0; 
+}
+
+.perfil{
+    align-items: center; 
+    gap: 10px;
+    margin-bottom: 15px;
+    background-color: var(--border-color); 
+    padding: 10px 0; 
+    width: 60%;
+    justify-self: center;
+}
+
+.perfil img { 
+    order: 1;
+    width: 80px;
+    border-color: #fffff1;
+    border-width: 2px;
+    border-style: solid; 
+    border-radius: 60px;
+}
+
+.perfil .etiqueta{
+    gap: 3px;
+    font-weight: bolder;
+    color: black;
+    text-shadow: -1px -1px 0 var(--light-gray), 
+                 1px -1px 0 var(--light-gray), 
+                -1px 1px 0 var(--light-gray), 
+                 1px 1px 0 var(--light-gray);
+}
