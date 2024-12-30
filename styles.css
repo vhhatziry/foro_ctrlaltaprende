@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'Scripter';
+    src: url(/font/Scripter-Regular.ttf);
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* General styles */
 * {
     margin: 0;
@@ -57,21 +65,31 @@ body {
 
 .nav_header h1 { 
     color: var(--secondary-color); 
-    margin-left: auto;
-    margin-right: 10px;
+    margin-right: auto;
+    font-family: 'Scripter';
+    text-align: left;
+    font-size: 2.5rem;
 }
-
 .nav_header img {
     border-radius: 5px;
-    margin-right: 25px;
+    margin-left: 1rem;
 }
 
-.nav_header_label{
+.nav_header label{
     text-decoration: none;
     font-size: 1.5rem;
     color: white;
     padding:0 1rem ;
-    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+}
+
+.nav_header a:-webkit-any-link {
+    color: white; 
+    text-decoration: none; 
+  }
+
+.last_label{
+    margin-right: 4rem;
 }
 
 .placeholder {
@@ -275,14 +293,43 @@ body {
 
 .main-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    margin-bottom: 1rem;
+    margin-top: -0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800; 
 }
 
+.buscador {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    padding: 10px 20px 10px 40px; /* Ajusta el padding para el icono */
+    border: none;
+    border-radius: 20px;
+    background-color: white; 
+    margin: 2rem;
+  }
+  
+  .buscador::placeholder {
+    color: #aaa; 
+  }
+  
+  .buscador::before {
+    content: "\f002"; /* Código del icono de búsqueda en Font Awesome */
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900; /* Asegúrate de usar el estilo "solid" */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #555555; /* Color del icono */
+  }
+  
 .new-topic-btn {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
@@ -295,6 +342,7 @@ body {
 
 .new-topic-btn:hover {
     background-color: var(--text-color);
+    color: var(--light-gray);
 }
 
 /* Tarjetas de temas */
@@ -304,19 +352,73 @@ body {
     gap: 1.5rem;
 }
 
-.topic-card{
-    background-color: var(--secondary-color);
+/* Contenedor principal del topic-card */
+.topic-card {
+    display: flex; /* Para alinear los elementos horizontalmente */
+    align-items: center;
+    background-color: var(--light-gray);
     border: 1px solid var(--light-gray);
     border-radius: 10px;
     padding: 1rem;
+    gap: 1rem; /* Espaciado entre elementos */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.topic-card:hover{
+/* Efecto hover */
+.topic-card:hover {
     background-color: var(--primary-color);
     border-color: var(--text-color);
     color: var(--light-gray);
+    transform: scale(1.02); /* Ligero aumento de tamaño */
+    h3{
+        color: whitesmoke;
+    }
 }
 
+/* Imagen de perfil */
+.topic-card img {
+    width: 6rem; /* Tamaño de la imagen */
+    height: 6rem;
+    border-radius: 50%; /* Para que sea circular */
+    object-fit: cover; /* Ajuste dentro del contenedor */
+    border: 2px solid var(--light-gray); /* Borde */
+}
+
+/* Contenido del artículo */
+.topic-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.topic-card p {
+    margin: 0.2rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-muted-color); /* Color más claro */
+}
+
+/* Metadatos e iconos */
+.topic-stats {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Espaciado entre stats */
+    margin-top: 0.5rem;
+}
+
+.topic-stats span {
+    font-size: 0.85rem;
+    color: var(--text-muted-color);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem; /* Espaciado entre icono y texto */
+}
+
+.topic-stats i {
+    font-size: 1rem;
+    color: var(--icon-color);
+}
 
 .topics a, .topic-card a:active{ 
     text-decoration: none; 

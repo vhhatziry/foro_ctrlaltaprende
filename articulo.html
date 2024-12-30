@@ -10,24 +10,23 @@
 <body>
     <div class="main-container">
         <nav class="nav_header">
-            <form class="placeholder">
-                <input placeholder=" Busca un tema :3" class="introduce">
-                <input value="Buscar" class="search-topic-btn">
-            </form> 
+            <img src="logo.jpg" width="95px" alt="Logo de Ctrl + Alt + Aprende"> 
             <h1>Ctrl + Alt + Aprende</h1>
-            <img src="logo.jpg" width="80px">
+            <label><a href="index.html"><i class="nav_header_label fas fa-home"></i> Inicio</a></label >
+            <label><a href="foro.html"><i class="nav_header_label fas fa-comments"></i> Foro de Discusión</a></label >
+            <label class="last_label"><a href="foro.html"><i class="nav_header_label fas fa-sign-in-alt"></i> Iniciar sesión</a></label>
         </nav>
 
         <aside class="sidebar">
             <nav class="nav_foro">
-                <a href="perfil.html" class="perfil_content">
-                    <div class="perfil">
-                      <img src="../controlaltaprende/image/favicon.jpg">
-                      <span class="etiqueta">Mi perfil</span>
-                    </div>
-                </a> 
+                <div class="buscador-contenedor">
+                    <button class="buscador-boton">
+                        <i class="fas fa-search"></i>                        
+                    </button>
+                    <input type="text" placeholder="Buscar..." class="buscador">
+                </div>     
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a href="foro.html"><i class="fas fa-home"></i> Inicio</a></li>
                     <li><a href="foro.html"><i class="fas fa-fire"></i> Temas más hablados</a></li>
                     <li><a href="#"><i class="fas fa-question-circle"></i> Preguntas</a></li>
                 </ul>

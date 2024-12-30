@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ctrl  + Alt + Aprende - Foro</title>
+    <title>Ctrl + Alt + Aprende - Foro</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="poppins.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
     <div class="main-container">
         <nav class="nav_header">
-            <img src="logo.jpg" width="80px">
-            <label><a href="index.html"><i class="nav_header_label fas fa-home"></i> Inicio</a></label >
-            <label><a href="foro.html"><i class="nav_header_label fa-fire"></i> Temas más hablados</a></label >
+            <img src="logo.jpg" width="95px" alt="Logo de Ctrl + Alt + Aprende"> 
             <h1>Ctrl + Alt + Aprende</h1>
-
+            <label><a href="index.html"><i class="nav_header_label fas fa-home"></i> Inicio</a></label >
+            <label><a href="foro.html"><i class="nav_header_label fas fa-comments"></i> Foro de Discusión</a></label >
+            <label class="last_label"><a href="foro.html"><i class="nav_header_label fas fa-sign-in-alt"></i> Iniciar sesión</a></label>
         </nav>
 
         <aside class="sidebar">
             <nav class="nav_foro">
-                <form class="placeholder">
-                    <input placeholder=" Busca un tema :3" class="introduce">
-                    <input value="Buscar" class="search-topic-btn">
-                </form> 
+                <div class="buscador-contenedor">
+                    <button class="buscador-boton">
+                        <i class="fas fa-search"></i>                        
+                    </button>
+                    <input type="text" placeholder="Buscar..." class="buscador">
+                  </div>
+                <button class="new-topic-btn"><i class="fas fa-plus"></i> Crear nuevo tema</button>
                 <ul>
                     <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
                     <li><a href="foro.html"><i class="fas fa-fire"></i> Temas más hablados</a></li>
@@ -37,75 +42,68 @@
         </aside>
 
         <main class="main-content">
-            <header class="main-header">
-                <h1>Bienvenido al foro</h1>
-                <button class="new-topic-btn"><i class="fas fa-plus"></i> Crear nuevo tema</button>
-            </header>
-
+            <h1 class="main-header">BIENVENIDX AL FORO</h1>
             <section class="topics">
-                <!-- Aquí van los temas del foro -->
-                <a href="articulo.html"><article class="topic-card">
-                    <h3>¿Cómo solucionar errores comunes en C++?</h3>
-                    <p>Publicado por <span>Usuario1</span> el 20/11/2024</p>
-                    <div class="topic-stats">
-                        <span><i class="fas fa-comments"></i> 10 Respuestas</span>
-                        <span><i class="fas fa-eye"></i> 150 Vistas</span>
-                    </div>
-                </article></a>
-
-                <article class="topic-card">
-                    <h3><a href="#">Cliqué máximo, un problema NP-Completo</a></h3>
-                    <p>Publicado por <span>Usuario2</span> el 19/11/2024</p>
-                    <div class="topic-stats">
-                        <span><i class="fas fa-comments"></i> 5 Respuestas</span>
-                        <span><i class="fas fa-eye"></i> 15 Vistas</span>
-                    </div>
-                </article>
-
-                <article class="topic-card">
-                    <h3><a href="#">Optimizando Compiladores con Tablas Hash</a></h3>
-                    <p>Publicado por <span>Usuario3</span> el 09/11/2024</p>
-                    <div class="topic-stats">
-                        <span><i class="fas fa-comments"></i> 2 Respuestas</span>
-                        <span><i class="fas fa-eye"></i> 60 Vistas</span>
-                    </div>
-                </article>
-
-                <article class="topic-card">
-                    <h3><a href="#">Tutorial básico de Python para principiantes</a></h3>
-                    <p>Publicado por <span>Usuario4</span> el 14/05/2024</p>
-                    <div class="topic-stats">
-                        <span><i class="fas fa-comments"></i> 25 Respuestas</span>
-                        <span><i class="fas fa-eye"></i> 80 Vistas</span>
-                    </div>
-                </article>
-                <article class="topic-card">
-                    <h3><a href="#">Typescript o Javascript?</a></h3>
-                    <p>Publicado por <span>Usuario5</span> el 19/11/2024</p>
-                    <div class="topic-stats">
-                        <span><i class="fas fa-comments"></i> 234 Respuestas</span>
-                        <span><i class="fas fa-eye"></i> 347 Vistas</span>
-                    </div>
-                </article>
-
-                <article class="topic-card">
-                    <h3><a href="#">Configuración de Java en Visual Studio</a></h3>
-                    <p>Publicado por <span>Usuario6</span> el 23/10/2024</p>
-                    <div class="topic-stats">
-                        <span><i class="fas fa-comments"></i> 2 Respuestas</span>
-                        <span><i class="fas fa-eye"></i> 60 Vistas</span>
-                    </div>
-                </article>
-
-                <article class="topic-card">
-                    <h3><a href="#">Librería para dibujar árboles binarios</a></h3>
-                    <p>Publicado por <span>Usuario7</span> el 08/11/2024</p>
-                    <div class="topic-stats">
-                        <span><i class="fas fa-comments"></i> 10 Respuestas</span>
-                        <span><i class="fas fa-eye"></i> 21  Vistas</span>
-                    </div>
-                </article>
-            </section>
+                <!-- Primer artículo -->
+                <a href="articulo.html">
+                    <article class="topic-card">
+                        <img src="/img/user1.jpeg" alt="Imagen de Usuario1">
+                        <div>
+                            <h3>¿Cómo solucionar errores comunes en C++?</h3>
+                            <p>Publicado por <span>Usuario1</span> el 20/11/2024</p>
+                            <div class="topic-stats">
+                                <span><i class="fas fa-comments"></i> 10 Respuestas</span>
+                                <span><i class="fas fa-eye"></i> 150 Vistas</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            
+                <!-- Segundo artículo -->
+                <a href="articulo.html">
+                    <article class="topic-card">
+                        <img src="/img/user2.jpeg" alt="Imagen de Usuario2">
+                        <div>
+                            <h3>Cliqué máximo, un problema NP-Completo</h3>
+                            <p>Publicado por <span>Usuario2</span> el 14/10/2024</p>
+                            <div class="topic-stats">
+                                <span><i class="fas fa-comments"></i> 5 Respuestas</span>
+                                <span><i class="fas fa-eye"></i> 18 Vistas</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            
+                <!-- Tercer artículo -->
+                <a href="articulo.html">
+                    <article class="topic-card">
+                        <img src="/img/user3.jpeg" alt="Imagen de Usuario3">
+                        <div>
+                            <h3>Optimizando LL(1) con Tablas Hash</h3>
+                            <p>Publicado por <span>Usuario3</span> el 09/11/2024</p>
+                            <div class="topic-stats">
+                                <span><i class="fas fa-comments"></i> 35 Respuestas</span>
+                                <span><i class="fas fa-eye"></i> 60 Vistas</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            
+                <!-- Cuarto artículo -->
+                <a href="articulo.html">
+                    <article class="topic-card">
+                        <img src="/img/user4.jpeg" alt="Imagen de Usuario4">
+                        <div>
+                            <h3>Tutorial básico de Python para principiantes</h3>
+                            <p>Publicado por <span>Usuario4</span> el 29/11/2024</p>
+                            <div class="topic-stats">
+                                <span><i class="fas fa-comments"></i> 52 Respuestas</span>
+                                <span><i class="fas fa-eye"></i> 143 Vistas</span>
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </section>            
         </main>
     </div>
 </body>
