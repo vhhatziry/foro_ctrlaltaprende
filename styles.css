@@ -66,6 +66,14 @@ body {
     margin-right: 25px;
 }
 
+.nav_header_label{
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    padding:0 1rem ;
+    -webkit-tap-highlight-color: transparent;
+}
+
 .placeholder {
     background-color: var(--primary-color-half);
     color: var(--secondary-color); 

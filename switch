@@ -1,0 +1,12 @@
+stmt:
+|switch'('VAR')''{' listcase'}'
+
+
+listcase: case
+| listcase case
+;
+
+case: CASE valorconst':' stmt bicak
+
+
+switch : SWITCH {$$=code(switchcode);}
