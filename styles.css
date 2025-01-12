@@ -1,7 +1,10 @@
 @font-face {
-    font-family: 'Scripter';
-    src: url(/font/Scripter-Regular.ttf);
+    font-family: 'scripterregular';
+    src: url('scripter-regular-webfont.woff2') format('woff2'),
+         url('scripter-regular-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
+
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -77,7 +80,7 @@ body {
 
 .nav_header label{
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
     padding:0 1rem ;
     text-align: center;
@@ -224,11 +227,9 @@ body {
     background-color: var(--primary-color);
 }
 
-.follow-btn:hover{
-    border-width: medium; 
+.loginforum-btn:hover{
     background-image: linear-gradient(to right, #9133e8, #0f33d5,var(--primary-color), #EEB211);
     color: white;
-    border: 2px solid;
     border-color: var(--text-color-half);
   }
 
@@ -283,6 +284,62 @@ body {
   }
 
 
+  .user-info {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.user-info p {
+    font-size: 16px;
+    color: #333;
+}
+
+.logout-btn {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+}
+
+.add-comment {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.add-comment h4 {
+    margin-bottom: 10px;
+}
+
+#comment-text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#comment-form button {
+    padding: 8px 15px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#comment-form button:hover {
+    background-color: #0056b3;
+}
+
 /* Contenido principal */
 .main-content {
     grid-area: main;
@@ -310,7 +367,7 @@ body {
   }
   
   .buscador-boton {
-    background-color: #333;
+    background-color: var(--text-color);
     width: 4rem;
     display: flex;
     align-items: center;
@@ -321,6 +378,13 @@ body {
     color: #fff;
     font-size: 20px;
   }
+
+  
+  .buscador-boton:hover{
+    background-color: var(--text-color-half);
+  }
+
+  
   
   .buscador {
     padding: 1rem;
@@ -336,6 +400,7 @@ body {
   
   
 .new-topic-btn {
+    display: none !important;
     color: var(--primary-color);
     background-color: var(--secondary-color);
     padding: 0.5rem 1rem;
@@ -346,6 +411,11 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    width: 12rem;
+    i{
+        font-size: 2rem;
+        font-weight: bold;
+    }
 }
 
 .new-topic-btn:hover {
@@ -597,7 +667,7 @@ body {
     background-color: var(--text-color);
 }
 /* Botones adicionales: Google y Email */
-.google-btn, .email-btn {
+.google-btn, .email-btn, .loginforum-btn{
     background-color: var(--light-gray);
     color: var(--text-color);
     padding: 0.7rem;
